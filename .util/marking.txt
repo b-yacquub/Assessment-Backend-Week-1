@@ -5,9 +5,9 @@ collected 112 items
 
 days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
-days_api/test_date_functions.py ................................FF.....  [100%]
+days_api/test_date_functions.py .......................................  [100%]
 
-======================== 75 failed, 37 passed in 0.31s =========================
+======================== 73 failed, 39 passed in 0.31s =========================
 ************* Module app
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
@@ -24,7 +24,8 @@ days_api/date_functions.py:21:0: C0116: Missing function or method docstring (mi
 days_api/date_functions.py:25:11: C2801: Unnecessarily calls dunder method __format__. Use format built-in function, format string method, or f-string. (unnecessary-dunder-call)
 days_api/date_functions.py:28:0: C0116: Missing function or method docstring (missing-function-docstring)
 days_api/date_functions.py:3:0: W0611: Unused timedelta imported from datetime (unused-import)
+days_api/date_functions.py:4:0: W0611: Unused import math (unused-import)
 
 -----------------------------------
-Your code has been rated at 6.00/10
+Your code has been rated at 6.05/10
 
