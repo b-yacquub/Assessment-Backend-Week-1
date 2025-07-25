@@ -9,7 +9,7 @@ from flask import Flask, Response, request, jsonify
 from date_functions import (convert_to_datetime, get_day_of_week_on,
                             get_days_between, get_current_age)
 
-app_history = []
+app_history = [{}, {}, {}]
 
 app = Flask(__name__)
 
@@ -73,6 +73,43 @@ def weekday():
         day = get_day_of_week_on(date_week)
         add_to_history(request)
         return {'weekday': day}, 200
+
+
+@app.route("/history", methods=["GET"])
+def history():
+    if request.method == "GET":
+        args = request.args.to_dict()
+        number = (args.get("number"))
+        if number != None:
+            nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+                    '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
+            if number not in nums:
+                return {
+                    "error": "Number must be an integer between 1 and 20."
+                }, 400
+            if int(number) > 0 and int(number) < 21:
+                return app_history[:int(number)], 200
+
+        return app_history[:5], 200
+
+
+@app.route("/current_age", methods=["GET"])
+def age():
+    if request.method == "GET":
+        args = request.args.to_dict()
+        date_input = (args.get("date"))
+        if date_input == None:
+            return {
+                "error": "Date parameter is required."
+            }, 400
+        try:
+            valid_date = datetime.strptime(date_input, '%Y-%m-%d')
+        except ValueError:
+            return {
+                "error": "Value for data parameter is invalid."
+            }, 400
+        valid_age = get_current_age(valid_date)
+        return {"current_age": valid_age}, 200
 
 
 if __name__ == "__main__":
