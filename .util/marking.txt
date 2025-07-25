@@ -7,10 +7,9 @@ days_api/test_api.py ................................................FFF [ 45%]
 FFFFFFF.FF............                                                   [ 65%]
 days_api/test_date_functions.py .......................................  [100%]
 
-======================== 12 failed, 100 passed in 0.26s ========================
+======================== 12 failed, 100 passed in 0.28s ========================
 ************* Module app
-days_api/app.py:82:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
-days_api/app.py:100:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
+days_api/app.py:99:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
 days_api/app.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
 days_api/app.py:38:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 days_api/app.py:60:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -18,9 +17,8 @@ days_api/app.py:60:0: R1710: Either all return statements in a function should r
 days_api/app.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
 days_api/app.py:83:11: C0121: Comparison 'number != None' should be 'number is not None' (singleton-comparison)
 days_api/app.py:79:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
-days_api/app.py:97:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:101:11: C0121: Comparison 'date_input == None' should be 'date_input is None' (singleton-comparison)
-days_api/app.py:97:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+days_api/app.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:96:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
 ************* Module date_functions
@@ -34,5 +32,5 @@ days_api/date_functions.py:3:0: W0611: Unused timedelta imported from datetime (
 days_api/date_functions.py:4:0: W0611: Unused import math (unused-import)
 
 -----------------------------------
-Your code has been rated at 7.58/10
+Your code has been rated at 7.80/10
 
