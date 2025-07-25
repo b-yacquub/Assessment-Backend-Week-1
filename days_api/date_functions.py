@@ -1,19 +1,32 @@
 """Functions for working with dates."""
 
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
+import math
 
 
 def convert_to_datetime(date_val: str) -> datetime:
-    pass
+    try:
+        return datetime.strptime(date_val, '%d.%m.%Y')
+    except ValueError:
+        raise ValueError("Unable to convert value to datetime.")
 
 
 def get_days_between(first: datetime, last: datetime) -> int:
-    pass
+
+    if not isinstance(first, datetime) or not isinstance(last, datetime):
+        raise TypeError("Datetimes required.")
+    return (last-first).days
 
 
 def get_day_of_week_on(date_val: datetime) -> str:
-    pass
+    if not isinstance(date_val, datetime):
+        raise TypeError("Datetime required.")
+
+    return date_val.__format__('%A')
 
 
 def get_current_age(birthdate: date) -> int:
-    pass
+    if not isinstance(birthdate, date):
+        raise TypeError('Date required.')
+    today = date.today()
+    return math.floor((today - birthdate).days/365)
