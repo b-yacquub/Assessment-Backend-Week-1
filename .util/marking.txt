@@ -5,9 +5,9 @@ collected 112 items
 
 days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
-days_api/test_date_functions.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF  [100%]
+days_api/test_date_functions.py ................................FF.....  [100%]
 
-============================= 112 failed in 0.33s ==============================
+======================== 75 failed, 37 passed in 0.31s =========================
 ************* Module app
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
@@ -17,16 +17,14 @@ days_api/app.py:9:0: W0611: Unused get_day_of_week_on imported from date_functio
 days_api/app.py:9:0: W0611: Unused get_days_between imported from date_functions (unused-import)
 days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
 ************* Module date_functions
-days_api/date_functions.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:6:24: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:10:21: W0613: Unused argument 'first' (unused-argument)
-days_api/date_functions.py:10:38: W0613: Unused argument 'last' (unused-argument)
+days_api/date_functions.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:11:8: W0707: Consider explicitly re-raising using 'except ValueError as exc' and 'raise ValueError('Unable to convert value to datetime.') from exc' (raise-missing-from)
 days_api/date_functions.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:14:23: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:18:20: W0613: Unused argument 'birthdate' (unused-argument)
+days_api/date_functions.py:21:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:25:11: C2801: Unnecessarily calls dunder method __format__. Use format built-in function, format string method, or f-string. (unnecessary-dunder-call)
+days_api/date_functions.py:28:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:3:0: W0611: Unused timedelta imported from datetime (unused-import)
 
 -----------------------------------
-Your code has been rated at 3.33/10
+Your code has been rated at 6.00/10
 
