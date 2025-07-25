@@ -37,6 +37,7 @@ def index():
 @app.route("/between", methods=["POST"])
 def between():
     if request.method == "POST":
+        add_to_history(request)
         data = request.json
         if len(data) != 2:
             return {"error": "Missing required data."}, 400
@@ -45,13 +46,33 @@ def between():
             if key not in required:
                 return {"error": "Missing required data."}, 400
         try:
-            first = datetime.strptime(data[0], '%d.%m.%Y')
+            first_date = convert_to_datetime(data['first'])
+            last_date = convert_to_datetime(data['last'])
         except ValueError:
             return {
                 "error": "Unable to convert value to datetime."
-            }
+            }, 400
+        days = get_days_between(first_date, last_date)
+        return {'days': days}, 200
 
-        return get_days_between(first, second), 200
+
+@app.route("/weekday", methods=["POST"])
+def weekday():
+    if request.method == "POST":
+        add_to_history(request)
+        data = request.json
+        if 'date' not in data.keys():
+            return {"error": "Missing required data."}, 400
+
+        try:
+            date_week = convert_to_datetime(data['date'])
+        except ValueError:
+            return {
+                "error": "Unable to convert value to datetime."
+            }, 400
+        day = get_day_of_week_on(date_week)
+        add_to_history(request)
+        return {'weekday': day}, 200
 
 
 if __name__ == "__main__":
