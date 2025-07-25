@@ -9,7 +9,7 @@ from flask import Flask, Response, request, jsonify
 from date_functions import (convert_to_datetime, get_day_of_week_on,
                             get_days_between, get_current_age)
 
-app_history = [{}, {}, {}]
+app_history = []
 
 app = Flask(__name__)
 
@@ -79,7 +79,7 @@ def weekday():
 def history():
     if request.method == "GET":
         args = request.args.to_dict()
-        number = (args.get("number"))
+        number = args.get("number")
         if number != None:
             nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
                     '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
@@ -89,7 +89,6 @@ def history():
                 }, 400
             if int(number) > 0 and int(number) < 21:
                 return app_history[:int(number)], 200
-
         return app_history[:5], 200
 
 
@@ -98,7 +97,7 @@ def age():
     if request.method == "GET":
         args = request.args.to_dict()
         date_input = (args.get("date"))
-        if date_input == None:
+        if date_input is None:
             return {
                 "error": "Date parameter is required."
             }, 400
