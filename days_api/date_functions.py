@@ -29,4 +29,7 @@ def get_current_age(birthdate: date) -> int:
     if not isinstance(birthdate, date):
         raise TypeError('Date required.')
     today = date.today()
-    return math.floor((today - birthdate).days/365)
+    age = today.year - birthdate.year
+    if (today.month, today.day) < (birthdate.month, birthdate.day):
+        age -= 1
+    return age
