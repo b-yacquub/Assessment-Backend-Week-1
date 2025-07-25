@@ -3,18 +3,19 @@ platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0
 rootdir: /home/runner/work/Assessment-Backend-Week-1/Assessment-Backend-Week-1
 collected 112 items
 
-days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
+days_api/test_api.py ......FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
 days_api/test_date_functions.py .......................................  [100%]
 
-======================== 73 failed, 39 passed in 0.31s =========================
+======================== 67 failed, 45 passed in 0.34s =========================
 ************* Module app
+days_api/app.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:54:39: E0602: Undefined variable 'second' (undefined-variable)
+days_api/app.py:38:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
-days_api/app.py:7:0: W0611: Unused request imported from flask (unused-import)
 days_api/app.py:9:0: W0611: Unused convert_to_datetime imported from date_functions (unused-import)
 days_api/app.py:9:0: W0611: Unused get_day_of_week_on imported from date_functions (unused-import)
-days_api/app.py:9:0: W0611: Unused get_days_between imported from date_functions (unused-import)
 days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
 ************* Module date_functions
 days_api/date_functions.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -27,5 +28,5 @@ days_api/date_functions.py:3:0: W0611: Unused timedelta imported from datetime (
 days_api/date_functions.py:4:0: W0611: Unused import math (unused-import)
 
 -----------------------------------
-Your code has been rated at 6.05/10
+Your code has been rated at 6.15/10
 
